@@ -12,7 +12,7 @@ const SwipeableInkTabBar = React.createClass({
     const activeKey = props.activeKey;
     const rst = [];
     const prefixCls = props.prefixCls;
-
+    const tabItemStyle = props.tabItemStyle;
     const tabStyle = {
       display: 'flex',
       flex: `0 0 ${1 / props.pageSize * 100}%`,
@@ -39,7 +39,7 @@ const SwipeableInkTabBar = React.createClass({
       }
       rst.push(<div
         role="tab"
-        style={tabStyle}
+        style={[tabStyle, tabItemStyle]}
         aria-disabled={child.props.disabled ? 'true' : 'false'}
         aria-selected={activeKey === key ? 'true' : 'false'}
         {...events}
